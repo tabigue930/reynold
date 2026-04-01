@@ -1,0 +1,93 @@
+:root {
+    --primary: #00d2ff;
+    --accent: #00f2fe;
+    --bg: #030508;
+    --card-bg: rgba(10, 15, 25, 0.9);
+    --glow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+body { background: var(--bg); color: #fff; font-family: 'Poppins', sans-serif; margin: 0; overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* 1. IDE-STYLE CODE BACKGROUND */
+.ide-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1; pointer-events: none; opacity: 0.12;
+    font-family: 'Fira Code', monospace;
+}
+.code-block {
+    position: absolute; white-space: pre; color: var(--primary);
+    animation: slideUp linear infinite; line-height: 1.5;
+}
+@keyframes slideUp { from { transform: translateY(100vh); } to { transform: translateY(-100%); } }
+
+/* 2. HERO & PROFILE */
+.hero { padding: 80px 0; text-align: center; position: relative; z-index: 10; }
+.hero-visual { display: flex; justify-content: center; margin-bottom: 20px; }
+.orbit-container { position: relative; width: 340px; height: 340px; display: flex; align-items: center; justify-content: center; }
+
+.tech-ring { position: absolute; width: 100%; height: 100%; animation: rotate 20s linear infinite; }
+.tech-ring i {
+    position: absolute; left: 45%; top: 45%; font-size: 2rem; color: var(--clr);
+    transform: rotate(calc(var(--i) * 45deg)) translateY(-145px);
+}
+@keyframes rotate { to { transform: rotate(360deg); } }
+
+.profile-heartbeat {
+    width: 200px; height: 200px; border-radius: 50%; border: 4px solid var(--primary);
+    overflow: hidden; box-shadow: var(--glow); animation: heartbeat 1.5s infinite ease-in-out;
+}
+.profile-heartbeat img { width: 100%; height: 100%; object-fit: cover; }
+@keyframes heartbeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+.glow-name { font-size: 3.5rem; letter-spacing: 5px; text-shadow: var(--glow); margin-bottom: 5px; }
+.role-title { color: var(--primary); font-weight: 600; font-size: 1.1rem; }
+.bio-text { max-width: 800px; margin: 20px auto; color: #cbd5e1; line-height: 1.7; }
+
+/* LIVE SYSTEMS UI */
+.live-systems { background: rgba(255,255,255,0.03); border-radius: 20px; padding: 30px; margin-top: 40px; border: 1px solid rgba(255,255,255,0.05); }
+.system-links { display: flex; justify-content: center; gap: 30px; margin-top: 20px; flex-wrap: wrap; }
+.sys-item { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.sys-name { font-weight: 700; color: #fff; letter-spacing: 1px; }
+.btn-visit { background: var(--primary); color: #000; border: none; padding: 10px 25px; border-radius: 5px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.btn-visit:disabled { background: #334155; color: #94a3b8; cursor: not-allowed; }
+.security-note { font-size: 0.8rem; color: #64748b; margin-top: 15px; }
+
+/* 3. PORTFOLIO & CATEGORIES */
+.cat-wrapper { display: flex; justify-content: center; gap: 15px; margin: 60px 0 40px; flex-wrap: wrap; }
+.cat-btn { background: #1e293b; color: #fff; border: none; padding: 12px 25px; border-radius: 50px; cursor: pointer; transition: 0.3s; font-weight: 600; }
+.cat-btn.active, .cat-btn:hover { background: var(--primary); color: #000; box-shadow: var(--glow); }
+
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; }
+.project-card { 
+    background: var(--card-bg); border-radius: 15px; overflow: hidden; 
+    border: 1px solid rgba(255,255,255,0.05); transition: 0.4s; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.project-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0, 210, 255, 0.2); }
+
+/* SPECIAL LOGO SHAPE - Perfectly Centered Pabilog */
+.project-card img { width: 100%; height: 280px; object-fit: cover; display: block; }
+.project-card img.logo-style { 
+    width: 200px; height: 200px; border-radius: 50%; margin: 20px auto;
+    background: #fff; padding: 20px; object-fit: contain;
+}
+.card-info { padding: 20px; width: 100%; }
+
+/* 4. MODAL & NAVIGATION */
+.modal { display: none; position: fixed; inset: 0; z-index: 1000; align-items: center; justify-content: center; padding: 20px; }
+.modal-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); }
+.modal-content { background: #0f172a; border-radius: 20px; max-width: 1000px; width: 100%; position: relative; overflow: hidden; border: 1px solid var(--primary); }
+.modal-body { display: flex; flex-wrap: wrap; }
+.modal-img-container { flex: 1.2; background: #fff; display: flex; align-items: center; }
+.modal-img-container img { width: 100%; max-height: 75vh; object-fit: contain; }
+.modal-details { flex: 0.8; padding: 40px; color: #fff; }
+.modal-nav { margin-top: 30px; display: flex; gap: 10px; }
+.modal-nav button { background: var(--primary); border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; font-weight: 700; }
+.back-home { background: #334155 !important; color: #fff !important; }
+
+/* 5. FOOTER */
+.premium-footer { background: #0a0f18; padding: 80px 0 30px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 80px; }
+.footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+.hire-btn { background: var(--primary); color: #000; text-decoration: none; padding: 15px 40px; border-radius: 50px; font-weight: 700; display: inline-block; margin-top: 20px; }
+.bottom-copy { text-align: center; color: #475569; margin-top: 50px; font-size: 0.9rem; }

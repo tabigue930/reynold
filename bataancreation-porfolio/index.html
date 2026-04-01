@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reynold P. Rio | Design & Dev Architecture</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="ide-bg" id="ideBg"></div>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-visual">
+                <div class="orbit-container">
+                    <div class="tech-ring">
+                        <i class="fab fa-html5" style="--i:1; --clr:#e34c26;"></i>
+                        <i class="fab fa-css3-alt" style="--i:2; --clr:#264de4;"></i>
+                        <i class="fab fa-js" style="--i:3; --clr:#f7df1e;"></i>
+                        <i class="fab fa-php" style="--i:4; --clr:#777bb4;"></i>
+                        <i class="fab fa-laravel" style="--i:5; --clr:#ff2d20;"></i>
+                        <i class="fab fa-react" style="--i:6; --clr:#61dbfb;"></i>
+                        <i class="fab fa-figma" style="--i:7; --clr:#f24e1e;"></i>
+                        <i class="fas fa-pen-nib" style="--i:8; --clr:#00d2ff;"></i>
+                    </div>
+                    <div class="profile-heartbeat">
+                        <img src="assets/profile/reynold-p-rio.jpg" alt="Reynold P. Rio">
+                    </div>
+                </div>
+            </div>
+
+            <div class="intro-content">
+                <h1 class="glow-name">REYNOLD P. RIO</h1>
+                <p class="role-title">Full-Stack Developer | Expert Graphic Designer | Signage Architect</p>
+                <div class="bio-text">
+                    <p>I don't just build websites; I engineer visual identities. From the first line of code to the final installation of high-tier commercial signage, I bridge the gap between digital robustness and artistic precision. Specializing in **System Development**, **Logo Branding**, and **Large-format Design & Install**.</p>
+                </div>
+
+                <div class="live-systems">
+                    <h3><i class="fas fa-server"></i> Featured System Deployments</h3>
+                    <div class="system-links">
+                        <div class="sys-item">
+                            <span class="sys-name">CZARINA POS V3</span>
+                            <button onclick="secureRedirect('czarina', 'https://czarina-pos-v3.netlify.app')" id="btn-czarina" class="btn-visit">Launch Demo</button>
+                        </div>
+                        <div class="sys-item">
+                            <span class="sys-name">CHINTEADS POS</span>
+                            <button onclick="secureRedirect('chinteads', 'https://chinteads-pos.netlify.app')" id="btn-chinteads" class="btn-visit">Launch Demo</button>
+                        </div>
+                    </div>
+                    <p class="security-note">*For security: Trial access is granted for one-time testing only.</p>
+                </div>
+
+                <div class="scroll-arrow" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'})">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="portfolio-section" id="portfolio">
+        <div class="container">
+            <nav class="cat-wrapper">
+                <button class="cat-btn active" data-filter="all">Master Collection</button>
+                <button class="cat-btn" data-filter="logo">Identity (Logos)</button>
+                <button class="cat-btn" data-filter="signage">Signage & Install</button>
+                <button class="cat-btn" data-filter="food">Graphic Menus</button>
+                <button class="cat-btn" data-filter="portrait">Portrait Arts</button>
+            </nav>
+
+            <div class="portfolio-grid" id="gallery-grid"></div>
+        </div>
+    </section>
+
+    <div id="projectModal" class="modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-img-container">
+                    <img id="modalImg" src="">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDesc"></p>
+                    <div class="modal-nav">
+                        <button onclick="changeProject(-1)"><i class="fas fa-arrow-left"></i> Prev</button>
+                        <button onclick="closeModal()" class="back-home">Back to Gallery</button>
+                        <button onclick="changeProject(1)">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="premium-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-left">
+                    <h3>Let's Create the Future</h3>
+                    <p><i class="fas fa-envelope"></i> bataancreation@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 09365810610</p>
+                </div>
+                <div class="footer-right">
+                    <p class="motto">"Great design is a marriage of logic and beauty. If your business needs a system that functions flawlessly and looks prestigious, you've found your partner."</p>
+                    <a href="mailto:bataancreation@gmail.com" class="hire-btn">Initiate Project</a>
+                </div>
+            </div>
+            <p class="bottom-copy">&copy; 2026 Bataan Creation | Reynold P. Rio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
